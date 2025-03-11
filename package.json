@@ -1,0 +1,23 @@
+{
+  "name": "meal-sharing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aymanngu/meal-sharing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aymanngu/meal-sharing/issues"
+  },
+  "homepage": "https://github.com/Aymanngu/meal-sharing#readme",
+  "description": "",
+  "type": "module"
+}
+
