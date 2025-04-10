@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Aymanngu/meal-sharing#readme",
   "description": "",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
 }
-

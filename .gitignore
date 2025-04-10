@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# Operating system files
+.DS_Store       # macOS
+Thumbs.db        # Windows
+
+# Environment variable files
+.env
+
+# Build output directories
+/dist
+/build
+
+# Temporary files
+.idea/
+.vscode/
+
+# npm package-lock files (if you use npm)
+package-lock.json
+
+# Yarn lock file (if you use yarn)
+yarn.lock
+
