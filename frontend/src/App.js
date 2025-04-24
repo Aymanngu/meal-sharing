@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import HomePage from './components/HomePage/HomePage';
+import MealsList from './components/MealsList/MealsList'; // Importér MealsList i stedet for HomePage
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <MealsList /> {/* Vis MealsList komponenten */}
     </div>
   );
 }

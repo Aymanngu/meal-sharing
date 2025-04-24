@@ -1,44 +1,52 @@
 import express from 'express';
 const router = express.Router();
 
-// Sample data (you can replace it with actual database calls)
 const meals = [
-  { id: 1, name: 'Spaghetti Bolognese', price: 15 },
-  { id: 2, name: 'Chicken Curry', price: 12 },
+  {
+    id: 1,
+    name: 'Spaghetti Bolognese',
+    price: 15,
+    location: 'Rome',
+    when: '2025-04-24T18:00:00Z',
+    description: 'A classic Italian pasta dish'
+  },
+  {
+    id: 2,
+    name: 'Chicken Curry',
+    price: 12,
+    location: 'London',
+    when: '2025-04-25T19:00:00Z',
+    description: 'A spicy, flavorful chicken dish'
+  },
 ];
 
-// GET all meals
 router.get('/', (req, res) => {
   res.json(meals);
 });
 
-// POST a new meal
 router.post('/', (req, res) => {
   const newMeal = req.body;
-  meals.push(newMeal); // Replace with actual database insert
+  meals.push(newMeal);
   res.status(201).json(newMeal);
 });
 
-// GET meal by ID
 router.get('/:id', (req, res) => {
   const meal = meals.find(m => m.id === parseInt(req.params.id));
   if (!meal) return res.status(404).send('Meal not found');
   res.json(meal);
 });
 
-// PUT update a meal by ID
 router.put('/:id', (req, res) => {
   const meal = meals.find(m => m.id === parseInt(req.params.id));
   if (!meal) return res.status(404).send('Meal not found');
-  Object.assign(meal, req.body); // Update meal with new data
+  Object.assign(meal, req.body);
   res.json(meal);
 });
 
-// DELETE meal by ID
 router.delete('/:id', (req, res) => {
   const mealIndex = meals.findIndex(m => m.id === parseInt(req.params.id));
   if (mealIndex === -1) return res.status(404).send('Meal not found');
-  meals.splice(mealIndex, 1); // Remove meal from array (replace with DB deletion)
+  meals.splice(mealIndex, 1);
   res.status(200).json({ message: 'Meal deleted' });
 });
 
