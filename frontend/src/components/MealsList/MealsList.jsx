@@ -1,28 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import Meal from './Meal';
-import './MealsList.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const MealsList = () => {
   const [meals, setMeals] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/meals')
+    fetch("http://localhost:3001/api/meals")
       .then((response) => response.json())
-      .then((data) => {
-        console.log('Fetched meals:', data);
-        setMeals(data);
-      })
-      .catch((error) => console.error('Error fetching meals:', error));
+      .then((data) => setMeals(data))
+      .catch((error) => console.error("Error fetching meals:", error));
   }, []);
 
   return (
     <div>
-      <h2>Meals</h2>
-      <div className="meals-grid">
+      <h2>Meals List</h2>
+      <ul>
         {meals.map((meal) => (
-          <Meal key={meal.id} meal={meal} />  
+          <li key={meal.id}>
+            <Link to={`/meals/${meal.id}`}>{meal.name}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
