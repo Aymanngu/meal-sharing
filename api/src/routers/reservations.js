@@ -1,7 +1,6 @@
 import express from 'express';
 const router = express.Router();
 
-// Sample data (you can replace it with actual database calls)
 const reservations = [
   { id: 1, name: 'Ayman Ngu', mealId: 1, guests: 2 },
   { id: 2, name: 'John Cena', mealId: 2, guests: 3 },

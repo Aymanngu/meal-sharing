@@ -1,12 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import MealsList from './components/MealsList/MealsList'; // Importér MealsList i stedet for HomePage
+import HomePage from './components/HomePage/HomePage';
+import MealsList from './components/MealsList/MealsList';
+import MealDetail from './components/MealDetail/MealDetail';
+import Header from './components/Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      <MealsList /> {/* Vis MealsList komponenten */}
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/meals" element={<MealsList />} />
+        <Route path="/meals/:id" element={<MealDetail />} />
+      </Routes>
+    </Router>
   );
 }
 

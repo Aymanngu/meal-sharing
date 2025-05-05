@@ -8,7 +8,8 @@ const meals = [
     price: 15,
     location: 'Rome',
     when: '2025-04-24T18:00:00Z',
-    description: 'A classic Italian pasta dish'
+    description: 'A classic Italian pasta dish',
+    available_reservations: 5
   },
   {
     id: 2,
@@ -16,8 +17,9 @@ const meals = [
     price: 12,
     location: 'London',
     when: '2025-04-25T19:00:00Z',
-    description: 'A spicy, flavorful chicken dish'
-  },
+    description: 'A spicy, flavorful chicken dish',
+    available_reservations: 5
+  }
 ];
 
 router.get('/', (req, res) => {
